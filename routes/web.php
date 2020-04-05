@@ -26,3 +26,13 @@ Route::get('/user-types', 'UserTypeController@getUserTypes');
 
 //Get Users
 Route::get('/users', 'UserController@getUsers');
+
+//Admin Tickets
+Route::get('/admin/tickets', 'TicketController@getTickets');
+Route::post('/admin/ticket', 'TicketController@storeTicket');
+Route::put('/admin/ticket', 'TicketController@editTicket');
+Route::delete('/admin/ticket/{id}', 'TicketController@deleteTicket');
+
+//User Tickets
+Route::get('/tickets', 'TicketController@getMyTickets');
+Route::put('/request-ticket', 'TicketController@requestTicket');
