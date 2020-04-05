@@ -42,4 +42,10 @@ class User extends Authenticatable
         ->where('user_type_id', 2) // 1: Admin, 2: User
         ->get();
     }
+
+    public function myTickets(){
+        return Ticket::select('id', 'requested', 'user_id')
+            ->where('user_id', $this->id)
+            ->get();
+    }
 }
