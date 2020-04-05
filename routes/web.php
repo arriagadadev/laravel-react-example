@@ -15,24 +15,32 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/*
+*   User Routes
+*/
+Route::group(['middleware' => ['auth', 'role:2']], function () {
+    //Tickets
+    Route::get('/tickets', 'TicketController@getMyTickets');
+    Route::put('/request-ticket', 'TicketController@requestTicket');
+});
 
-//Get User Types
-Route::get('/user-types', 'UserTypeController@getUserTypes');
+/*
+*   Admin Routes
+*/
+Route::group(['middleware' => ['auth', 'role:1']], function () {
+    //Get User Types
+    Route::get('/user-types', 'UserTypeController@getUserTypes');
 
-//Get Users
-Route::get('/users', 'UserController@getUsers');
+    //Get Users
+    Route::get('/users', 'UserController@getUsers');
 
-//Admin Tickets
-Route::get('/admin/tickets', 'TicketController@getTickets');
-Route::post('/admin/ticket', 'TicketController@storeTicket');
-Route::put('/admin/ticket', 'TicketController@editTicket');
-Route::delete('/admin/ticket/{id}', 'TicketController@deleteTicket');
-
-//User Tickets
-Route::get('/tickets', 'TicketController@getMyTickets');
-Route::put('/request-ticket', 'TicketController@requestTicket');
+    //Tickets
+    Route::get('/admin/tickets', 'TicketController@getTickets');
+    Route::post('/admin/ticket', 'TicketController@storeTicket');
+    Route::put('/admin/ticket', 'TicketController@editTicket');
+    Route::delete('/admin/ticket/{id}', 'TicketController@deleteTicket');
+});

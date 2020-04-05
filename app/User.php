@@ -48,4 +48,8 @@ class User extends Authenticatable
             ->where('user_id', $this->id)
             ->get();
     }
+
+    public function hasUserType($userType){
+        return $this->user_type_id == $userType;
+    }
 }
