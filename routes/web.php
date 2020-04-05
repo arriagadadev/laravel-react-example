@@ -23,3 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Get User Types
 Route::get('/user-types', 'UserTypeController@getUserTypes');
+
+//Get Users
+Route::get('/users', 'UserController@getUsers');
