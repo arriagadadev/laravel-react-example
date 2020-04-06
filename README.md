@@ -1,11 +1,11 @@
 ## About This Example
 
-This example shows how to use jobs and React with Laravel.
-[Here is a demonstration](https://laravel-react-example.swarm.cl).
-Administrator user: admin@admin.cl
-Password: admin
-Normal User: user@user.cl
-Password: user
+This example shows how to use jobs and React with Laravel.<br/>
+[Here is a demonstration](https://laravel-react-example.swarm.cl).<br/>
+Administrator user: admin@admin.cl<br/>
+Password: admin<br/>
+Normal User: user@user.cl<br/>
+Password: user<br/>
 
 ## Requirements
 
