@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'user_type_id'
     ];
 
     /**
@@ -36,4 +36,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function getUsers(){
+        return (new static)::select('id','name', 'email')
+        ->where('user_type_id', 2) // 1: Admin, 2: User
+        ->get();
+    }
+
+    public function myTickets(){
+        return Ticket::select('id', 'requested', 'user_id')
+            ->where('user_id', $this->id)
+            ->orderBy('id', 'DESC')
+            ->get();
+    }
+
+    public function hasUserType($userType){
+        return $this->user_type_id == $userType;
+    }
 }
