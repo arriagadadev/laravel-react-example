@@ -15,17 +15,18 @@ Password: user
 ## Installation
 
 1. Install PHP (>=7.2.0)
-2. Install Composer
+2. Install Composer and Node
 3. Clone this repository (or just download the .zip file and unzip it)
 4. Open the terminal and go to the project folder
 5. Run `composer install` to install project dependencies
-6. Install and/or create the relational database that you like to use in the project
-9. Copy the file '.env.example' and paste it in the same folder with the name '.env'
-10. Add the connection information to your database in the file '.env'
-11. Run `php artisan key:generate`
-13. Run `php artisan migrate --seed` to create the necessary tables and the default data
-14. Run `php artisan serve`
-15. Now the project is running in 'http://localhost:8000'
+6. Run `npm install && npm run dev` to install project dependencies and build the app
+7. Install and/or create the relational database that you like to use in the project
+8. Copy the file '.env.example' and paste it in the same folder with the name '.env'
+9. Add the connection information to your database in the file '.env'
+10. Run `php artisan key:generate`
+11. Run `php artisan migrate --seed` to create the necessary tables and the default data
+12. Run `php artisan serve`
+13. Now the project is running in 'http://localhost:8000'
 
 ## License
 
