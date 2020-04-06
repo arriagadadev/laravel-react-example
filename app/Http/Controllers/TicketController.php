@@ -9,7 +9,7 @@ class TicketController extends Controller
 {
     public function getTickets(Request $request){
         return [
-            'tickets' => Ticket::select('id', 'user_id', 'requested')->get()
+            'tickets' => Ticket::getAll()
         ];
     }
 

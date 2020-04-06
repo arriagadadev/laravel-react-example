@@ -10882,3 +10882,9 @@ a.text-dark:focus {
   }
 }
 
+.card i {
+  font-size: 1.2rem !important;
+  margin-right: 10px;
+  cursor: pointer;
+}
+

@@ -6,3 +6,9 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.card i {
+    font-size: 1.2rem !important;
+    margin-right: 10px;
+    cursor: pointer;
+}

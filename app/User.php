@@ -46,6 +46,7 @@ class User extends Authenticatable
     public function myTickets(){
         return Ticket::select('id', 'requested', 'user_id')
             ->where('user_id', $this->id)
+            ->orderBy('id', 'DESC')
             ->get();
     }
 
